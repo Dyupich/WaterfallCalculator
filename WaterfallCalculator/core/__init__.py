@@ -1,1 +1,1 @@
-from .t import GUICalculator
+from .GUICalculator import GUICalculator
