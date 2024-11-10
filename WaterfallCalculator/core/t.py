@@ -26,16 +26,21 @@ class GUICalculator:
             borderwidth=4
         )
         entry.grid(row=0, column=0, columnspan=4)
+        self.__init_buttons()
+
+    def __init_buttons(self):
         row_val = 1
         col_val = 0
         for button in GUICalculator.BUTTONS:
-            tk.Button(
+            tmp_button = tk.Button(
                 self.master,
                 text=button,
                 padx=20,
                 pady=20,
                 font=('Arial', 18),
-                command=lambda b=button: self.on_button_click(b)).grid(row=row_val, column=col_val)
+                command=lambda b=button: self.on_button_click(b)
+            )
+            tmp_button.grid(row=row_val, column=col_val)
             col_val += 1
             if col_val > 3:
                 col_val = 0
