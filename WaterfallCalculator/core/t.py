@@ -2,6 +2,13 @@ import tkinter as tk
 
 
 class GUICalculator:
+    BUTTONS = [
+        '7', '8', '9', '/',
+        '4', '5', '6', '*',
+        '1', '2', '3', '-',
+        '0', 'C', '=', '+',
+    ]
+
     def __init__(self, master):
         self.master = master
         master.title("Calculator")
@@ -19,17 +26,9 @@ class GUICalculator:
             borderwidth=4
         )
         entry.grid(row=0, column=0, columnspan=4)
-
-        buttons = [
-            '7', '8', '9', '/',
-            '4', '5', '6', '*',
-            '1', '2', '3', '-',
-            '0', 'C', '=', '+',
-        ]
-
         row_val = 1
         col_val = 0
-        for button in buttons:
+        for button in GUICalculator.BUTTONS:
             tk.Button(
                 self.master,
                 text=button,
