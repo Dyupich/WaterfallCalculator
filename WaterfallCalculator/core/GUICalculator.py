@@ -71,8 +71,10 @@ class GUICalculator:
                 expression = self.result_var.get()
                 result = eval(expression)  # Be cautious with eval in production code
                 self.result_var.set(result)
+            except ZeroDivisionError:
+                self.result_var.set("Zero divison error")
             except Exception as e:
-                self.result_var.set("Error")
+                self.result_var.set("Can't calculate it")
             return
         current_text = self.result_var.get()
         new_text = current_text + str(button)
